@@ -28,6 +28,11 @@ The current version of InRA is compatible with MATLAB R2020b and later.
 Before starting, make sure the file **InRA.m** is located in the same directory as the **scripts** and **modules** folders.
 > [!IMPORTANT]
 > ***To import a set of <sup>1</sup>1H NMR spectra into the current version of InRA (v1.0), the spectra must be phased, baseline-corrected, and referenced. Accepted file formats include .cv, .xlsx, and .xls. In the matrix array, the first column must contain the chemical shifts values (ppm), while the subsequent columns should include the intensity values for each sample).***
+
+<details>
+
+<summary>1. PROCESSING</summary>
+
 ## 1. PROCESSING
 ### 1.1 IMPORT A SET OF <sup>1</sup>H NMR SPECTRA
 - In the MATLAB workspace, launch the software by typing InRA in the Command Window.  
@@ -54,3 +59,20 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 - If any interval needs to be modified, enable the **Edit interval** checkbox. The latter will activate a slider bar that allows for adjustment of the ppm values.  
 - Once all desired intervals have been added and configured, click **Continue** button to execute the alignment.
 ![Processing_1](/images/Processing_4.png)
+![Processing_1](/images/Processing_5.png)
+![Processing_1](/images/Processing_6.png)
+![Processing_1](/images/Processing_7.png)
+
+</details>
+
+<details>
+
+<summary>2. INTERVAL-BASED DETECTION</summary>
+
+## 2. INTERVAL-BASED DETECTION
+![Processing_1](/images/Interval-based_detection_1.png)
+![Processing_1](/images/Interval-based_detection_2.png)
+![Processing_1](/images/Interval-based_detection_3.png)
+![Processing_1](/images/Interval-based_detection_4.png)
+
+</details>
