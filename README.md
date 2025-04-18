@@ -6,7 +6,7 @@
 InRA GUI consists of .m files developed under MATLAB R2023b. <br>
 The current version of InRA is compatible with MATLAB R2020b and later.
 
-**_All the algorithms implemented in InRA have been specifically developed/modified for this tool based on literature and open-source functions._**
+***All the algorithms implemented in InRA have been specifically developed/modified for this tool based on literature and open-source functions.***
 ## Authors:
 **Rosario del P. Castillo**
 - Department of Instrumental Analysis, Faculty of Pharmacy, University of Concepción - Chile
@@ -22,3 +22,34 @@ The current version of InRA is compatible with MATLAB R2020b and later.
 - Department of Instrumental Analysis, Faculty of Pharmacy, University of Concepción - Chile
 - Laboratory of Biospectroscopy and Chemometrics (BioSpeQ), Biotechnology Center, University of Concepción - Chile
 - email: crisfuentes (at) udec (dot) cl
+
+# ANALYTICAL WORKFLOW OF InRA
+Before starting, make sure the file **InRA.m** is located in the same directory as the **scripts** and **modules** folders.
+
+***(IMPORTANT: To import a set of <sup>1</sup>1H NMR spectra into the current version of InRA (v1.0), the spectra must be phased, baseline-corrected, and referenced. Accepted file formats include .cv, .xlsx, and .xls. In the matrix array, the first column must contain the chemical shifts values (ppm), while the subsequent columns should include the intensity values for each sample).***
+## 1. PROCESSING
+### 1.1 IMPORT A SET OF <sup>1</sup>H NMR SPECTRA
+- In the MATLAB workspace, launch the software by typing InRA in the Command Window.  
+- Click the **Import NMR Spectra** button and select the file containing the set of <sup>1</sup>H NMR spectra. Once loaded, the spectra will be displayed in the first plot using the **Overlay** mode. Additionally, the matrix size (e.g., 50 x 66945) will be shown.  
+- The first module, **Spectra Display Modes**, will now be enabled. This module offers three general visualization modes: **Overlay (default)**, **Average**, or **Median**.  
+- A list labeled **Set of Samples** allows for individual visualization of each <sup>1</sup>H NMR spectrum.  
+- Specific samples can be excluded from the analysis if necessary by clicking on the **Exclude sample** button. (Sample list and matrix size will be updated automatically).  
+- Once the <sup>1</sup>H NMR spectra have been reviewed, click the **Continue** button to proceed with the analysis.  
+![Processing_1](/images/Processing_1.png)
+### 1.2 PROCESS A SET OF <sup>1</sup>H NMR SPECTRA
+- The second module, **Processing options for <sup>1</sup>H NMR spectra** and a second plot titled **Processed <sup>1</sup>H NMR Spectra** will be activated. The latter plot will update progressively as processing steps are applied, while the first plot will remain unchanged to allow for a easy and direct comparison between the "raw" and "processed" spectra.  
+- The first step involves defining an appropriate chemical shift range that includes the relevant resonance signals. Enter the lower and upper ppm values in the boxes labeled **Lower ppm** and **Higher ppm**, respectively. For example: **Lower ppm = 0.2 and Higher ppm = 9.6**.  
+- By clicking the **View** button, vertical lines appear in the plot to indicate the selected spectral range.  
+- To apply and reduce the spectral range, click the **Range** button.  
+- The spectral matrix will be automatically adjusted according to the defined range, and the updated matrix size will be displayed immediately.  
+![Processing_1](/images/Processing_2.png)
+- Next, it is necessary to perform proper spectral alignment to correct any misalignments that could affect further analysis. InRA includes the ***icoshift*** algorithm for this purpose (https://doi.org/10.1016/j.jmr.2009.11.012).  
+- To perform alignment, two main selection must be made. First, under the **Reference** functionality, an appropriate reference vector must be selected. Available options include: **Average**, **Median**, **Max (spectrum with the most intense features)**, or **Average2**. If the **Average2** option is selected – _which uses the average of the average multiplied by a specific value_ – a new window **Multiplier** will open. In this window, the **input multiplier value** must be entered.  
+- Second, the alignment **mode** must be specified. Two modes are available: **whole** or **intervals**. The **whole** mode applies _icoshift_ to the entire spectral range, offering a straightforward and simplified approach.  
+![Processing_1](/images/Processing_3.png)
+- For a more refined alignment, the **intervals** mode should be selected. Upon selection, a new window titled **Icoshift: Intervals** will appear.  
+- Intervals must be manually defined by specifying the **Lower ppm** and **Higher ppm** values and then clicking the **Add** button to include the interval. (Added intervals will appear in a numbered list).  
+- To remove an interval, click the **Delete** button.  
+- If any interval needs to be modified, enable the **Edit interval** checkbox. The latter will activate a slider bar that allows for adjustment of the ppm values.  
+- Once all desired intervals have been added and configured, click **Continue** button to execute the alignment.
+![Processing_1](/images/Processing_4.png)
