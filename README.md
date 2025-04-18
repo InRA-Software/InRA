@@ -1,12 +1,13 @@
 # Interval Resonance Analysis (InRA)
+![Logo](/images/InRA_logo_oficial.png)  
 **Version:** 1.0 <br>
 **Oficial site:** https://github.com/InRA-Software/InRA <br>
 **Oficial email:** inrasoftware (at) gmail (dot) com
 
 InRA GUI consists of .m files developed under MATLAB R2023b. <br>
-The current version of InRA is compatible with MATLAB R2020b and later.
-
-***All the algorithms implemented in InRA have been specifically developed/modified for this tool based on literature and open-source functions.***
+The current version of InRA is compatible with MATLAB R2020b and later.  
+> [!NOTE]
+> **All the algorithms implemented in InRA have been specifically developed/modified for this tool based on literature and open-source functions.**
 ## Authors:
 **Rosario del P. Castillo**
 - Department of Instrumental Analysis, Faculty of Pharmacy, University of Concepción - Chile
@@ -25,8 +26,8 @@ The current version of InRA is compatible with MATLAB R2020b and later.
 
 # ANALYTICAL WORKFLOW OF InRA
 Before starting, make sure the file **InRA.m** is located in the same directory as the **scripts** and **modules** folders.
-
-***(IMPORTANT: To import a set of <sup>1</sup>1H NMR spectra into the current version of InRA (v1.0), the spectra must be phased, baseline-corrected, and referenced. Accepted file formats include .cv, .xlsx, and .xls. In the matrix array, the first column must contain the chemical shifts values (ppm), while the subsequent columns should include the intensity values for each sample).***
+> [!IMPORTANT]
+> ***To import a set of <sup>1</sup>1H NMR spectra into the current version of InRA (v1.0), the spectra must be phased, baseline-corrected, and referenced. Accepted file formats include .cv, .xlsx, and .xls. In the matrix array, the first column must contain the chemical shifts values (ppm), while the subsequent columns should include the intensity values for each sample).***
 ## 1. PROCESSING
 ### 1.1 IMPORT A SET OF <sup>1</sup>H NMR SPECTRA
 - In the MATLAB workspace, launch the software by typing InRA in the Command Window.  
