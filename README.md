@@ -5,7 +5,7 @@ InRA GUI consists of .m files developed under MATLAB R2023b.
 
 | Version | Matlab Compatibility | Oficial site | Oficial email | 
 | :---:         |   :---:  |:---:      |     :---: |
-| 1.0   | R2020b and later |https://github.com/InRA-Software/InRA     | inrasoftware (at) gmail (dot) com    |
+| 1.0   | R2020b <br> and later |https://github.com/InRA-Software/InRA     | inrasoftware (at) gmail (dot) com    |
 
 > [!NOTE]
 > **All the algorithms implemented in InRA have been specifically developed/modified for this tool based on literature and open-source functions.**
