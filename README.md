@@ -1,11 +1,12 @@
 # Interval Resonance Analysis (InRA)
 ![Logo](/images/InRA_logo_oficial.png)  
-**Version:** 1.0 <br>
-**Oficial site:** https://github.com/InRA-Software/InRA <br>
-**Oficial email:** inrasoftware (at) gmail (dot) com
 
-InRA GUI consists of .m files developed under MATLAB R2023b. <br>
-The current version of InRA is compatible with MATLAB R2020b and later.  
+InRA GUI consists of .m files developed under MATLAB R2023b. 
+
+| Version | Matlab Compatibility | Oficial site | Oficial email | 
+| :---:         |   :---:  |:---:      |     :---: |
+| 1.0   | R2020b and later |https://github.com/InRA-Software/InRA     | inrasoftware (at) gmail (dot) com    |
+
 > [!NOTE]
 > **All the algorithms implemented in InRA have been specifically developed/modified for this tool based on literature and open-source functions.**
 ## Authors:
