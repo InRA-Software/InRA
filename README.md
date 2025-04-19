@@ -140,7 +140,6 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 
 </details>
 
-
 <details>
 
 <summary> 2.2 PERFORM RESONANCE SIGNAL DETECTION  </summary>
@@ -159,8 +158,25 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 
 </details>
 
+<details>
+
+<summary> 2.3 MODIFY SPECTRAL INTERVALS  </summary>
+
+## 2.3 MODIFY SPECTRAL INTERVALS
+
 ![Processing_1](/images/Interval-based_detection_3.png)
+
+</details>
+
+<details>
+
+<summary> 2.4   </summary>
+
+## 2.4
+
 ![Processing_1](/images/Interval-based_detection_4.png)
+
+</details>
 
 </details>
 
