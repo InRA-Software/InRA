@@ -202,7 +202,7 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 
 ## 3.1 MCR DECOMPOSITINOS
 
-> **IMPORTANT:** ***Interval decomposition in InRA is carried out via Multivariate Curve Resolution (MCR) (https://doi.org/10.1039/c4ay00571f). Initial estimates are obtained through the most dissimilar rows (“purest ST”), following an approach analogous to the SIMPLISMA algorithm. To reduce the number of feasible solutions caused by rotational ambiguity, InRA implements the TNT-NN algorithm (https://doi.org/10.1016/j.procs.2017.05.194) - an enhanced version of FNNLS - which enforces non-negativity constraints on both directions (C and ST) and reduces computational load by solving multiple MCR models simultaneously during optimization via Alternating Least Squares (ALS).***
+> **IMPORTANT:** ***Interval decomposition in InRA is carried out via Multivariate Curve Resolution (MCR) (https://doi.org/10.1039/c4ay00571f). Initial estimates are obtained through the most dissimilar rows ("purest S<sup>T</sup>"), following an approach analogous to the SIMPLISMA algorithm. To reduce the number of feasible solutions caused by rotational ambiguity, InRA implements the TNT-NN algorithm (https://doi.org/10.1016/j.procs.2017.05.194) - an enhanced version of FNNLS - which enforces non-negativity constraints on both directions (C and S<sup>T</sup>) and reduces computational load by solving multiple MCR models simultaneously during optimization via Alternating Least Squares (ALS).***
 
 - To begin the MCR decomposition, two modeling approaches are available. 
 - For the **All-at-Once** module enter the desired number of components in the **Components** section (e.g., 3), followed by the number of iterations in the **n° of iterations** field. 
@@ -210,12 +210,26 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 
 > **IMPORTANT:** ***The All-at-Once approach will automatically decompose all intervals within each spectral region using the same number of components, offering a more simplified and direct modeling strategy.***
 
+- Once the multi-modelling process is complete, the resolved ***S<sup>T</sup>*** and ***C*** profiles will be displayed in separate plots titled **Resolved Spectral Profiles** and **Resolved Concentration Profiles**, respectively. (These plots are dynamically updated as intervals are selected)
+- Evaluation metrics, i.e., the **percent of lack of fit (% LOF)**, the **percent of explained variance (% R<sup>2</sup>)**, and the **standard deviation of residuals (σ)** will be shown to assess the performance of each MCR model per interval.
 
 ![Processing_1](/images/Resonance_Integration_2.png)
 
-</details>
+- For the **One-at-Time approach**, it is necessary to individually select the optimal number of components for each interval.
+- Go to the **Purest ST** module and enter the desired number of components into the **Components** section (based on the magnitude of the **Eigenvalues**). 
+- Once the number of components is set (e.g., 2), click the **Initialize with 2 components** button. The initial estimates will be automatically displayed in the **Initialization Spectrum**.
+- If the selected number of components is not appropriate, enter a new value (e.g., 4) and click again **Initialize with 4 components** to update the initial estimates.
+- Once the optimal number of components has been determined, click the **Save n° of Components** button to save the selection.
+ 
+> **IMPORTANT:** ***The latter step should be repeated for each individual interval.***
+
+- After completing the component selection process for all intervals, in the **One-at-Time** module, input the number of iterations in the **n° of iterations** section.
+- Finally, click the **Build Model** button to begin the MCR decomposition. 
 
 ![Processing_1](/images/Resonance_Integration_3.png)
+
+</details>
+
 ![Processing_1](/images/Resonance_Integration_4.png)
 ![Processing_1](/images/Resonance_Integration_5.png)
 
