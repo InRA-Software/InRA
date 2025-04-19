@@ -119,7 +119,7 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 
 <summary> 2.1 ADJUST DETECTION PARAMETERS  </summary>
 
-## 2.1 ADJUST DETECTION PARAMETERS 
+### 2.1 ADJUST DETECTION PARAMETERS 
 - Before performing resonance signal detection, it is possible to adjust detection parameters to optimize the accuracy of the results. 
 - To access these options, click the **Settings** button. A new window will open with the three internal parameters of the detection algorithm that can be modified: 
   - ***Detection Window (D)*** - Default: 0.01 ppm
@@ -144,7 +144,7 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 
 <summary> 2.2 PERFORM RESONANCE SIGNAL DETECTION  </summary>
 
-## 2.2 PERFORM RESONANCE SIGNAL DETECTION
+### 2.2 PERFORM RESONANCE SIGNAL DETECTION
 - To begin the signal detection process, a threshold value must be set in the **Threshold** section (e.g., 0.001). The threshold value can range between 0.001 and 0.7500. 
 - Detection can be performed either independently for each spectral region or simultaneously across all regions: 
   - Independent detection:  
@@ -162,7 +162,7 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 
 <summary> 2.3 MODIFY SPECTRAL INTERVALS  </summary>
 
-## 2.3 MODIFY SPECTRAL INTERVALS
+### 2.3 MODIFY SPECTRAL INTERVALS
 - To ensure optimal results, intervals can be manually added, edited or removed as needed. 
 - Click the **Zoom region** button to closely inspect a specific spectral region. To turn back, click the **General View** button. 
 - For manually defined a new interval, enter the desired values in the **Lower ppm** and **Higher ppm** input sections (e.g., **Lower ppm = 1.846**, **Higher ppm = 1.960**). Click the **Add** button and the interval will be added and highlighted on the plot.
@@ -200,7 +200,7 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 
 <summary> 3.1 MCR DECOMPOSITINOS </summary>
 
-## 3.1 MCR DECOMPOSITINOS
+### 3.1 MCR DECOMPOSITINOS
 
 > **IMPORTANT:** ***Interval decomposition in InRA is carried out via Multivariate Curve Resolution (MCR) (https://doi.org/10.1039/c4ay00571f). Initial estimates are obtained through the most dissimilar rows ("purest S<sup>T</sup>"), following an approach analogous to the SIMPLISMA algorithm. To reduce the number of feasible solutions caused by rotational ambiguity, InRA implements the TNT-NN algorithm (https://doi.org/10.1016/j.procs.2017.05.194) - an enhanced version of FNNLS - which enforces non-negativity constraints on both directions (C and S<sup>T</sup>) and reduces computational load by solving multiple MCR models simultaneously during optimization via Alternating Least Squares (ALS).***
 
@@ -228,11 +228,27 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 
 ![Processing_1](/images/Resonance_Integration_3.png)
 
-</details>
+- Once the MCR models have been calculated, it is possible that some components may be poorly resolved, display artifacts, or resemble baseline-like or background profiles. 
+- To remove such components and retain only those containing meaningful chemical information, select the desired interval within its corresponding spectral region. 
+- In the **Only for selected interval** module, click the **Delete Comp.** button.
+- A new window will appear showing a list of components for that specific interval (**e.g., Comp.1, Comp.2, Comp.3, etc.**). 
+- Select the component(s) to remove and click **Delete Component**. 
+- After deletion, the plots showing the resolved spectral and concentration profiles will automatically update, reflecting only the remaining components. 
+- If to recalculate a single MCR model for a specific interval is needed, repeat the process by entering the optimal number of components in the **PUREST ST** module. 
+- Click the **Initialize with n components** button, then **Save n° of components**, and finally click the **Build model** button in the **Only for interval selected** module to run the updated MCR decomposition. 
 
 ![Processing_1](/images/Resonance_Integration_4.png)
+
+- Finally, to continue with the analysis, click the **Proceed!** button.
+   
+> **IMPORTANT:** ***After the Proceed! button was clicked, the resolved concentration profiles (C) are automatically merged column-wise to form a new matrix called C<sub>Features</sub>. The C<sub>Features</sub> matrix is used for PCA and has dimensions I × K. I corresponds to the total number of samples in the original set of <sup>1</sup>H NMR spectra, and K represents the total number of resolved C components across all intervals from the MCR decomposition.***
+
+- If needed, the MCR intervals can be exported to the MATLAB workspace clicking the **Export Models** button. A new window labeled **Info** will appear, indicating that the MCR models have been successfully exported as structure arrays (ModelsRegion1, ModelsRegion2, and ModelsRegion3). 
+- Each structure contains seven cell arrays: **ppm**, **concentrations**, **resolvedST**, **Components**, **LackOfFitExp**, **ExplainedVariance**, and **StdRes**. Moreover, each column within these cell arrays corresponds to a specific interval. 
+
 ![Processing_1](/images/Resonance_Integration_5.png)
 
+</details>
 
 </details>
 
@@ -243,9 +259,18 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 <summary> 4. UNSUPERVISED ANALYSIS </summary>
 
 ## 4. UNSUPERVISED ANALYSIS
+
+<details>
+
+<summary> 4.1 EXPLORATORY ANALYSIS VIA PCA </summary>
+
+### 4.1 EXPLORATORY ANALYSIS VIA PCA
+
 ![Processing_1](/images/Interval-based_detection_1.png)
 ![Processing_1](/images/Interval-based_detection_2.png)
 ![Processing_1](/images/Interval-based_detection_3.png)
 ![Processing_1](/images/Interval-based_detection_4.png)
+
+</details>
 
 </details>
