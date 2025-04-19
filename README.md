@@ -3,9 +3,9 @@
 
 InRA GUI consists of .m files developed under MATLAB R2023b. 
 
-| Version | Matlab Compatibility | Oficial site | Oficial email | 
-| :---:         |   :---:  |:---:      |     :---: |
-| 1.0   | R2020b <br> and later |https://github.com/InRA-Software/InRA     | inrasoftware (at) gmail (dot) com    |
+| Version | Matlab Compatibility  |            Oficial site                 |               Oficial email       | 
+| :---:   |         :---:         |                 :---:                   |                   :---:           |
+| 1.0     | R2020b <br> and later |  https://github.com/InRA-Software/InRA  | inrasoftware (at) gmail (dot) com |
 
 > [!NOTE]
 > **All the algorithms implemented in InRA have been specifically developed/modified for this tool based on literature and open-source functions.**
@@ -28,11 +28,11 @@ InRA GUI consists of .m files developed under MATLAB R2023b.
 # ANALYTICAL WORKFLOW OF InRA
 Before starting, make sure the file **InRA.m** is located in the same directory as the **scripts** and **modules** folders.
 > [!IMPORTANT]
-> ***To import a set of <sup>1</sup>1H NMR spectra into the current version of InRA (v1.0), the spectra must be phased, baseline-corrected, and referenced. Accepted file formats include .cv, .xlsx, and .xls. In the matrix array, the first column must contain the chemical shifts values (ppm), while the subsequent columns should include the intensity values for each sample).***
+> ***To import a set of <sup>1</sup>1H NMR spectra into the current version of InRA (v1.0), the spectra must be previously phased, baseline-corrected, and referenced. Accepted file formats include .cv, .xlsx, and .xls. In the matrix array, the first column must contain the chemical shifts values (ppm), while the subsequent columns should include the intensity values for each sample).***
 
 <details>
 
-<summary>1. PROCESSING</summary>
+<summary> 1. PROCESSING </summary>
 
 ## 1. PROCESSING
 ### 1.1 IMPORT A SET OF <sup>1</sup>H NMR SPECTRA
@@ -60,17 +60,59 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 - If any interval needs to be modified, enable the **Edit interval** checkbox. The latter will activate a slider bar that allows for adjustment of the ppm values.  
 - Once all desired intervals have been added and configured, click **Continue** button to execute the alignment.
 ![Processing_1](/images/Processing_4.png)
+- To remove residual signals (e.g., water after presturation), define the ppm range by entering values in the **Lower ppm** and **Higher ppm** options.
+- By clicking the **View** button, the selected ppm range will be highlighted in the plot for visual inspection.
+- Once the desired range has been confirmed, click the **Delete** button to remove the signal. The latter process can be repeated as many times as necessary.
 ![Processing_1](/images/Processing_5.png)
+- The final step consists of spectra normalization. One of the available normalization options must be selected: **Norm-1 (total sum norm)** or **Norm-2 (Euclidean norm)**.
+- If spectral dimensionality reduction is needed, the binning method can be applied. InRA includes the equidistant binning (equal size) method.
+> **IMPORTANT:** ***To proceed with the subsequent analytical workflow, it is recommended not to apply binning, but a very small bucket width (e.g., 0.001) can be possible. The methodology implemented in InRA focuses on preserving relevant spectral information, i.e., signal shape and multiplicity, without loss of spectral resolution.***
+
+- To perform bucketing, set the bucket size in the **Bucket Width** option and click the **Binning** button. Moreover, by clicking **Integration**, the bucket spectra will be integrated. To export the integrated bins click the **Export integrated Bins to .csv file**.  
+> **IMPORTANT:** ***The latter option is recommended only when using InRA for processing purposes without continuing to the following steps.***
+
 ![Processing_1](/images/Processing_6.png)
+### 1.3 PREPARE A SET OF <sup>1</sup>H NMR SPECTRA FOR COMPARISON
+- An additional function, **Binning to Compare**, is available for generating a bucket matrix specifically for comparison via PCA at the end of the workflow. This matrix is internally referred to as **Bucket Spectra**, and it is saved along with the **Original Processed** matrix (i.e., the <sup>1</sup>H NMR spectra that has been range-selected, aligned, residual signal removed, and normalized before binning).
+- To achieve the latter, define the bucket size under the **Bucket Width** section, then click the **Binning to Compare** button.
+- A new window will open displaying the **Bucket Spectra**, and a confirmation message will indicate that the **Bucket Spectra** matrix and the **Original Processed** matrix have been stored internally.
+> **IMPORTANT:** ***When using this option, any bucket size can be applied, as the resulting matrix is treated independently and is intended solely for comparison, without affecting subsequent analysis.***
+
 ![Processing_1](/images/Processing_7.png)
+- Finally, to continue with the analysis, click the **Proceed to Interval Detection** button. If needed, the processed <sup>1</sup>H NMR spectra can be exported in .mat clicking the **Export Spectra to Workspace** or .csv format by clicking the **Export Spectra to .csv file**. 
+
 
 </details>
 
 <details>
 
-<summary>2. INTERVAL-BASED DETECTION</summary>
+<summary> 2. INTERVAL-BASED DETECTION </summary>
 
 ## 2. INTERVAL-BASED DETECTION
+![Processing_1](/images/Interval-based_detection_1.png)
+![Processing_1](/images/Interval-based_detection_2.png)
+![Processing_1](/images/Interval-based_detection_3.png)
+![Processing_1](/images/Interval-based_detection_4.png)
+
+</details>
+
+<details>
+
+<summary> 3. RESONANCE INTEGRATION </summary>
+
+## 3. RESONANCE INTEGRATION
+![Processing_1](/images/Interval-based_detection_1.png)
+![Processing_1](/images/Interval-based_detection_2.png)
+![Processing_1](/images/Interval-based_detection_3.png)
+![Processing_1](/images/Interval-based_detection_4.png)
+
+</details>
+
+<details>
+
+<summary> 4. UNSUPERVISED ANALYSIS </summary>
+
+## 4. UNSUPERVISED ANALYSIS
 ![Processing_1](/images/Interval-based_detection_1.png)
 ![Processing_1](/images/Interval-based_detection_2.png)
 ![Processing_1](/images/Interval-based_detection_3.png)
