@@ -114,7 +114,32 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 <summary> 2. INTERVAL-BASED DETECTION </summary>
 
 ## 2. INTERVAL-BASED DETECTION
+
+<details>
+
+<summary> 2.1 ADJUST DETECTION PARAMETERS  </summary>
+
+## 2.1 ADJUST DETECTION PARAMETERS 
+- Before performing resonance signal detection, it is possible to adjust detection parameters to optimize the accuracy of the results. 
+- To access these options, click the **Settings** button. A new window will open with the three internal parameters of the detection algorithm that can be modified: 
+ - ***Detection Window (D)*** - Default: 0.01 ppm
+ - ***Distance Consecutive Maxima (L)*** - Default: 0.03 ppm
+ - ***Separation Distance (H)*** - Default: 0.005 ppm
+- Once the desired values have been set, click the **Save** button to store the new settings. To revert to the default values, click the **Default Values** button and close the window.  
+- In addition, the algorithm operates **independently** across three default spectral regions:
+ - **0 - 3 ppm**
+ - **3 - 6 ppm**
+ - **6 - 10 ppm**
+- If necessary, these spectral boundaries can be modified. 
+
+> **IMPORTANT:** ***Only the 3 ppm and 6 ppm limits can be changed.*** 
+
+- Click the **Change Bound** button, a new window will appear showing the current region boundary as a red line. 
+- Adjust the value manually using the ppm slider. When finished, click **Apply Changes**, the new region settings will be saved, and the change in ppm (e.g., 3.1 - 6 ppm) will be displayed in the respective module. 
 ![Processing_1](/images/Interval-based_detection_1.png)
+
+</details>
+
 ![Processing_1](/images/Interval-based_detection_2.png)
 ![Processing_1](/images/Interval-based_detection_3.png)
 ![Processing_1](/images/Interval-based_detection_4.png)
