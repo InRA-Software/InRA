@@ -163,20 +163,23 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 <summary> 2.3 MODIFY SPECTRAL INTERVALS  </summary>
 
 ## 2.3 MODIFY SPECTRAL INTERVALS
+- To ensure optimal results, intervals can be manually added, edited or removed as needed. 
+- Click the **Zoom region** button to closely inspect a specific spectral region. To turn back, click the **General View** button. 
+- For manually defined a new interval, enter the desired values in the **Lower ppm** and **Higher ppm** input sections (e.g., **Lower ppm = 1.846**, **Higher ppm = 1.960**). Click the **Add** button and the interval will be added and highlighted on the plot.
 
-![Processing_1](/images/Interval-based_detection_3.png)
+> **IMPORTANT:** ***The interval list (Detected Intervals) is automatically updated and re-ordered based on ppm values. For instance, if a detected interval originally labeled as "R1-Interval 3" spans from 1.50 to 1.68 ppm, and an interval from 1.22 to 1.38 ppm is manually add, the new interval will become "R1-Interval 3", and the previous one will be shifted to "R1-Interval 4" accordingly.***
 
-</details>
-
-<details>
-
-<summary> 2.4   </summary>
-
-## 2.4
-
+- To edit an existing interval, select the interval from the list and click the **Edit** button and a new window will appear.
+- Adjust the interval boundaries using the ppm slider. After the desired changes, click **Apply Changes** to save the update. 
+- To delete an interval, select the interval from the list and click the **Delete** button. The interval will be removed from the list and the plot. 
+- All manually added or deleted intervals are automatically tracked and can be viewed in the respective **Added** and **Deleted** modules associated with each spectral region.  
+![Processing_1](/images/Interval-based_detection_3.png)  
+- Finally, to continue with the analysis, click the **Proceed!** button. If needed, the detected intervals can be exported to the MATLAB workspace clicking the **Export Intervals** button. A new window labeled **Info** will appear, indicating that the intervals have been successfully exported as cell arrays (IntervalsRegion1, IntervalsRegion2, and IntervalsRegion3). In each cell array the first column contains the ppm values and the second column contains the corresponding intensity values.  
 ![Processing_1](/images/Interval-based_detection_4.png)
 
 </details>
+
+
 
 </details>
 
