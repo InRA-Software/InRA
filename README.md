@@ -194,18 +194,30 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 - To explore an individual interval, select the desired region (e.g., **Region 2**) and choose the interval of interest from the list. 
 - For each selected interval, the **Purest ST** module displays a plot titled Eigenvalues, where the magnitudes of the eigenvalues obtained through Singular Value Decomposition (SVD) are shown (up to a maximum of 10 components). The **Eigenvalues** plot updates automatically whenever a different interval is selected. 
 - Furthermore, InRA incorporates two optimized multi-modelling approaches - **All-at-Once** and **Once-at-Time** - which can be applied depending on the specific goals of the analysis. 
-![Processing_1](/images/Interval-based_detection_1.png)
+![Processing_1](/images/Resonance_Integration_1.png)
 
 <details>
 
 <summary> 3.1 MCR DECOMPOSITINOS </summary>
 
-![Processing_1](/images/Interval-based_detection_2.png)
+## 3.1 MCR DECOMPOSITINOS
+
+> **IMPORTANT:** ***Interval decomposition in InRA is carried out via Multivariate Curve Resolution (MCR) (https://doi.org/10.1039/c4ay00571f). Initial estimates are obtained through the most dissimilar rows (“purest ST”), following an approach analogous to the SIMPLISMA algorithm. To reduce the number of feasible solutions caused by rotational ambiguity, InRA implements the TNT-NN algorithm (https://doi.org/10.1016/j.procs.2017.05.194) - an enhanced version of FNNLS - which enforces non-negativity constraints on both directions (C and ST) and reduces computational load by solving multiple MCR models simultaneously during optimization via Alternating Least Squares (ALS).***
+
+- To begin the MCR decomposition, two modeling approaches are available. 
+- For the **All-at-Once** module enter the desired number of components in the **Components** section (e.g., 3), followed by the number of iterations in the **n° of iterations** field. 
+- Click the **Build Model** button to initiate the MCR decomposition process. 
+
+> **IMPORTANT:** ***The All-at-Once approach will automatically decompose all intervals within each spectral region using the same number of components, offering a more simplified and direct modeling strategy.***
+
+
+![Processing_1](/images/Resonance_Integration_2.png)
 
 </details>
 
-![Processing_1](/images/Interval-based_detection_3.png)
-![Processing_1](/images/Interval-based_detection_4.png)
+![Processing_1](/images/Resonance_Integration_3.png)
+![Processing_1](/images/Resonance_Integration_4.png)
+![Processing_1](/images/Resonance_Integration_5.png)
 
 
 </details>
