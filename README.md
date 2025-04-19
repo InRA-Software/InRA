@@ -35,6 +35,11 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 <summary> 1. PROCESSING </summary>
 
 ## 1. PROCESSING
+
+<details>
+
+<summary> 1.1 IMPORT A SET OF <sup>1</sup>H NMR SPECTRA </summary>
+
 ### 1.1 IMPORT A SET OF <sup>1</sup>H NMR SPECTRA
 - In the MATLAB workspace, launch the software by typing InRA in the Command Window.  
 - Click the **Import NMR Spectra** button and select the file containing the set of <sup>1</sup>H NMR spectra. Once loaded, the spectra will be displayed in the first plot using the **Overlay** mode. Additionally, the matrix size (e.g., 50 x 66945) will be shown.  
@@ -43,6 +48,13 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 - Specific samples can be excluded from the analysis if necessary by clicking on the **Exclude sample** button. (Sample list and matrix size will be updated automatically).  
 - Once the <sup>1</sup>H NMR spectra have been reviewed, click the **Continue** button to proceed with the analysis.  
 ![Processing_1](/images/Processing_1.png)
+
+</details>
+
+<details>
+
+<summary> 1.2 PROCESS A SET OF <sup>1</sup>H NMR SPECTRA </summary>
+
 ### 1.2 PROCESS A SET OF <sup>1</sup>H NMR SPECTRA
 - The second module, **Processing options for <sup>1</sup>H NMR spectra** and a second plot titled **Processed <sup>1</sup>H NMR Spectra** will be activated. The latter plot will update progressively as processing steps are applied, while the first plot will remain unchanged to allow for a easy and direct comparison between the "raw" and "processed" spectra.  
 - The first step involves defining an appropriate chemical shift range that includes the relevant resonance signals. Enter the lower and upper ppm values in the boxes labeled **Lower ppm** and **Higher ppm**, respectively. For example: **Lower ppm = 0.2 and Higher ppm = 9.6**.  
@@ -72,6 +84,14 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 > **IMPORTANT:** ***The latter option is recommended only when using InRA for processing purposes without continuing to the following steps.***
 
 ![Processing_1](/images/Processing_6.png)
+
+</details>
+
+
+<details>
+
+<summary> 1.3 PREPARE A SET OF <sup>1</sup>H NMR SPECTRA FOR COMPARISON </summary>
+
 ### 1.3 PREPARE A SET OF <sup>1</sup>H NMR SPECTRA FOR COMPARISON
 - An additional function, **Binning to Compare**, is available for generating a bucket matrix specifically for comparison via PCA at the end of the workflow. This matrix is internally referred to as **Bucket Spectra**, and it is saved along with the **Original Processed** matrix (i.e., the <sup>1</sup>H NMR spectra that has been range-selected, aligned, residual signal removed, and normalized before binning).
 - To achieve the latter, define the bucket size under the **Bucket Width** section, then click the **Binning to Compare** button.
@@ -83,6 +103,11 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 
 
 </details>
+
+
+</details>
+
+##
 
 <details>
 
@@ -96,6 +121,8 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 
 </details>
 
+##
+
 <details>
 
 <summary> 3. RESONANCE INTEGRATION </summary>
@@ -107,6 +134,8 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 ![Processing_1](/images/Interval-based_detection_4.png)
 
 </details>
+
+##
 
 <details>
 
