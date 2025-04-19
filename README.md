@@ -190,10 +190,23 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 <summary> 3. RESONANCE INTEGRATION </summary>
 
 ## 3. RESONANCE INTEGRATION
+- As the interval detection process, the intervals remain organized according to their specific spectral region. 
+- To explore an individual interval, select the desired region (e.g., **Region 2**) and choose the interval of interest from the list. 
+- For each selected interval, the **Purest ST** module displays a plot titled Eigenvalues, where the magnitudes of the eigenvalues obtained through Singular Value Decomposition (SVD) are shown (up to a maximum of 10 components). The **Eigenvalues** plot updates automatically whenever a different interval is selected. 
+- Furthermore, InRA incorporates two optimized multi-modelling approaches - **All-at-Once** and **Once-at-Time** - which can be applied depending on the specific goals of the analysis. 
 ![Processing_1](/images/Interval-based_detection_1.png)
+
+<details>
+
+<summary> 3.1 MCR DECOMPOSITINOS </summary>
+
 ![Processing_1](/images/Interval-based_detection_2.png)
+
+</details>
+
 ![Processing_1](/images/Interval-based_detection_3.png)
 ![Processing_1](/images/Interval-based_detection_4.png)
+
 
 </details>
 
