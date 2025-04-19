@@ -198,9 +198,9 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 
 <details>
 
-<summary> 3.1 MCR DECOMPOSITINOS </summary>
+<summary> 3.1 MCR DECOMPOSITION </summary>
 
-### 3.1 MCR DECOMPOSITINOS
+### 3.1 MCR DECOMPOSITION
 
 > **IMPORTANT:** ***Interval decomposition in InRA is carried out via Multivariate Curve Resolution (MCR) (https://doi.org/10.1039/c4ay00571f). Initial estimates are obtained through the most dissimilar rows ("purest S<sup>T</sup>"), following an approach analogous to the SIMPLISMA algorithm. To reduce the number of feasible solutions caused by rotational ambiguity, InRA implements the TNT-NN algorithm (https://doi.org/10.1016/j.procs.2017.05.194) - an enhanced version of FNNLS - which enforces non-negativity constraints on both directions (C and S<sup>T</sup>) and reduces computational load by solving multiple MCR models simultaneously during optimization via Alternating Least Squares (ALS).***
 
