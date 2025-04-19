@@ -122,14 +122,14 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 ## 2.1 ADJUST DETECTION PARAMETERS 
 - Before performing resonance signal detection, it is possible to adjust detection parameters to optimize the accuracy of the results. 
 - To access these options, click the **Settings** button. A new window will open with the three internal parameters of the detection algorithm that can be modified: 
- - ***Detection Window (D)*** - Default: 0.01 ppm
- - ***Distance Consecutive Maxima (L)*** - Default: 0.03 ppm
- - ***Separation Distance (H)*** - Default: 0.005 ppm
+  - ***Detection Window (D)*** - Default: 0.01 ppm
+  - ***Distance Consecutive Maxima (L)*** - Default: 0.03 ppm
+  - ***Separation Distance (H)*** - Default: 0.005 ppm
 - Once the desired values have been set, click the **Save** button to store the new settings. To revert to the default values, click the **Default Values** button and close the window.  
 - In addition, the algorithm operates **independently** across three default spectral regions:
- - **0 - 3 ppm**
- - **3 - 6 ppm**
- - **6 - 10 ppm**
+  - **0 - 3 ppm**
+  - **3 - 6 ppm**
+  - **6 - 10 ppm**
 - If necessary, these spectral boundaries can be modified. 
 
 > **IMPORTANT:** ***Only the 3 ppm and 6 ppm limits can be changed.*** 
