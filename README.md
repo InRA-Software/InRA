@@ -61,21 +61,21 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 - By clicking the **View** button, vertical lines appear in the plot to indicate the selected spectral range.  
 - To apply and reduce the spectral range, click the **Range** button.  
 - The spectral matrix will be automatically adjusted according to the defined range, and the updated matrix size will be displayed immediately.  
-![Processing_1](/images/Processing_2.png)
+![Processing_2](/images/Processing_2.png)
 - Next, it is necessary to perform proper spectral alignment to correct any misalignments that could affect further analysis. InRA includes the ***icoshift*** algorithm for this purpose (https://doi.org/10.1016/j.jmr.2009.11.012).  
 - To perform alignment, two main selection must be made. First, under the **Reference** functionality, an appropriate reference vector must be selected. Available options include: **Average**, **Median**, **Max (spectrum with the most intense features)**, or **Average2**. If the **Average2** option is selected – _which uses the average of the average multiplied by a specific value_ – a new window **Multiplier** will open. In this window, the **input multiplier value** must be entered.  
 - Second, the alignment **mode** must be specified. Two modes are available: **whole** or **intervals**. The **whole** mode applies _icoshift_ to the entire spectral range, offering a straightforward and simplified approach.  
-![Processing_1](/images/Processing_3.png)
+![Processing_3](/images/Processing_3.png)
 - For a more refined alignment, the **intervals** mode should be selected. Upon selection, a new window titled **Icoshift: Intervals** will appear.  
 - Intervals must be manually defined by specifying the **Lower ppm** and **Higher ppm** values and then clicking the **Add** button to include the interval. (Added intervals will appear in a numbered list).  
 - To remove an interval, click the **Delete** button.  
 - If any interval needs to be modified, enable the **Edit interval** checkbox. The latter will activate a slider bar that allows for adjustment of the ppm values.  
 - Once all desired intervals have been added and configured, click **Continue** button to execute the alignment.
-![Processing_1](/images/Processing_4.png)
+![Processing_4](/images/Processing_4.png)
 - To remove residual signals (e.g., water after presturation), define the ppm range by entering values in the **Lower ppm** and **Higher ppm** options.
 - By clicking the **View** button, the selected ppm range will be highlighted in the plot for visual inspection.
 - Once the desired range has been confirmed, click the **Delete** button to remove the signal. The latter process can be repeated as many times as necessary.
-![Processing_1](/images/Processing_5.png)
+![Processing_5](/images/Processing_5.png)
 - The final step consists of spectra normalization. One of the available normalization options must be selected: **Norm-1 (total sum norm)** or **Norm-2 (Euclidean norm)**.
 - If spectral dimensionality reduction is needed, the binning method can be applied. InRA includes the equidistant binning (equal size) method.
 > **IMPORTANT:** ***To proceed with the subsequent analytical workflow, it is recommended not to apply binning, but a very small bucket width (e.g., 0.001) can be possible. The methodology implemented in InRA focuses on preserving relevant spectral information, i.e., signal shape and multiplicity, without loss of spectral resolution.***
@@ -83,7 +83,7 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 - To perform bucketing, set the bucket size in the **Bucket Width** option and click the **Binning** button. Moreover, by clicking **Integration**, the bucket spectra will be integrated. To export the integrated bins click the **Export integrated Bins to .csv file**.  
 > **IMPORTANT:** ***The latter option is recommended only when using InRA for processing purposes without continuing to the following steps.***
 
-![Processing_1](/images/Processing_6.png)
+![Processing_6](/images/Processing_6.png)
 
 </details>
 
@@ -98,12 +98,10 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 - A new window will open displaying the **Bucket Spectra**, and a confirmation message will indicate that the **Bucket Spectra** matrix and the **Original Processed** matrix have been stored internally.
 > **IMPORTANT:** ***When using this option, any bucket size can be applied, as the resulting matrix is treated independently and is intended solely for comparison, without affecting subsequent analysis.***
 
-![Processing_1](/images/Processing_7.png)
+![Processing_7](/images/Processing_7.png)
 - Finally, to continue with the analysis, click the **Proceed to Interval Detection** button. If needed, the processed <sup>1</sup>H NMR spectra can be exported in .mat clicking the **Export Spectra to Workspace** or .csv format by clicking the **Export Spectra to .csv file**. 
 
-
 </details>
-
 
 </details>
 
@@ -136,7 +134,7 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 
 - Click the **Change Bound** button, a new window will appear showing the current region boundary as a red line. 
 - Adjust the value manually using the ppm slider. When finished, click **Apply Changes**, the new region settings will be saved, and the change in ppm (e.g., 3.1 - 6 ppm) will be displayed in the respective module. 
-![Processing_1](/images/Interval-based_detection_1.png)
+![Interval-based_detection_1](/images/Interval-based_detection_1.png)
 
 </details>
 
@@ -154,7 +152,7 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 
 > **IMPORTANT:** ***Threshold values can be adjusted for each spectral region as many times as necessary until a suitable detection is achieved.***
  
-![Processing_1](/images/Interval-based_detection_2.png)
+![Interval-based_detection_2](/images/Interval-based_detection_2.png)
 
 </details>
 
@@ -173,13 +171,11 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 - Adjust the interval boundaries using the ppm slider. After the desired changes, click **Apply Changes** to save the update. 
 - To delete an interval, select the interval from the list and click the **Delete** button. The interval will be removed from the list and the plot. 
 - All manually added or deleted intervals are automatically tracked and can be viewed in the respective **Added** and **Deleted** modules associated with each spectral region.  
-![Processing_1](/images/Interval-based_detection_3.png)  
+![Interval-based_detection_3](/images/Interval-based_detection_3.png)  
 - Finally, to continue with the analysis, click the **Proceed!** button. If needed, the detected intervals can be exported to the MATLAB workspace clicking the **Export Intervals** button. A new window labeled **Info** will appear, indicating that the intervals have been successfully exported as cell arrays (IntervalsRegion1, IntervalsRegion2, and IntervalsRegion3). In each cell array the first column contains the ppm values and the second column contains the corresponding intensity values.  
-![Processing_1](/images/Interval-based_detection_4.png)
+![Interval-based_detection_4](/images/Interval-based_detection_4.png)
 
 </details>
-
-
 
 </details>
 
@@ -194,7 +190,7 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 - To explore an individual interval, select the desired region (e.g., **Region 2**) and choose the interval of interest from the list. 
 - For each selected interval, the **Purest ST** module displays a plot titled Eigenvalues, where the magnitudes of the eigenvalues obtained through Singular Value Decomposition (SVD) are shown (up to a maximum of 10 components). The **Eigenvalues** plot updates automatically whenever a different interval is selected. 
 - Furthermore, InRA incorporates two optimized multi-modelling approaches - **All-at-Once** and **Once-at-Time** - which can be applied depending on the specific goals of the analysis. 
-![Processing_1](/images/Resonance_Integration_1.png)
+![Resonance_Integration_1](/images/Resonance_Integration_1.png)
 
 <details>
 
@@ -213,7 +209,7 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 - Once the multi-modelling process is complete, the resolved ***S<sup>T</sup>*** and ***C*** profiles will be displayed in separate plots titled **Resolved Spectral Profiles** and **Resolved Concentration Profiles**, respectively. (These plots are dynamically updated as intervals are selected)
 - Evaluation metrics, i.e., the **percent of lack of fit (% LOF)**, the **percent of explained variance (% R<sup>2</sup>)**, and the **standard deviation of residuals (σ)** will be shown to assess the performance of each MCR model per interval.
 
-![Processing_1](/images/Resonance_Integration_2.png)
+![Resonance_Integration_2](/images/Resonance_Integration_2.png)
 
 - For the **One-at-Time approach**, it is necessary to individually select the optimal number of components for each interval.
 - Go to the **Purest ST** module and enter the desired number of components into the **Components** section (based on the magnitude of the **Eigenvalues**). 
@@ -226,7 +222,7 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 - After completing the component selection process for all intervals, in the **One-at-Time** module, input the number of iterations in the **n° of iterations** section.
 - Finally, click the **Build Model** button to begin the MCR decomposition. 
 
-![Processing_1](/images/Resonance_Integration_3.png)
+![Resonance_Integration_3](/images/Resonance_Integration_3.png)
 
 - Once the MCR models have been calculated, it is possible that some components may be poorly resolved, display artifacts, or resemble baseline-like or background profiles. 
 - To remove such components and retain only those containing meaningful chemical information, select the desired interval within its corresponding spectral region. 
@@ -237,7 +233,7 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 - If to recalculate a single MCR model for a specific interval is needed, repeat the process by entering the optimal number of components in the **PUREST ST** module. 
 - Click the **Initialize with n components** button, then **Save n° of components**, and finally click the **Build model** button in the **Only for interval selected** module to run the updated MCR decomposition. 
 
-![Processing_1](/images/Resonance_Integration_4.png)
+![Resonance_Integration_4](/images/Resonance_Integration_4.png)
 
 - Finally, to continue with the analysis, click the **Proceed!** button.
    
@@ -246,7 +242,7 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 - If needed, the MCR intervals can be exported to the MATLAB workspace clicking the **Export Models** button. A new window labeled **Info** will appear, indicating that the MCR models have been successfully exported as structure arrays (ModelsRegion1, ModelsRegion2, and ModelsRegion3). 
 - Each structure contains seven cell arrays: **ppm**, **concentrations**, **resolvedST**, **Components**, **LackOfFitExp**, **ExplainedVariance**, and **StdRes**. Moreover, each column within these cell arrays corresponds to a specific interval. 
 
-![Processing_1](/images/Resonance_Integration_5.png)
+![Resonance_Integration_5](/images/Resonance_Integration_5.png)
 
 </details>
 
@@ -280,7 +276,7 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 - If **Resolved ST** is selected, a list titled MCR Component will appear, containing all previously resolved **S<sup>T</sup>**.
 - Selecting a component (e.g., 18) will automatically display its corresponding spectral profile in the **Resolved Spectral Profile S<sup>T</sup>** plot, including the spectral region and interval to which it belongs (e.g., **Region 1 - Interval 15**). 
 
-![Processing_1](/images/Interval-based_detection_1.png)
+![Unsupervised_Analysis_1](/images/Unsupervised_Analysis_1.png)
 
 </details>
 
@@ -297,7 +293,9 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 - For instance, select **Original Processed** and click the **Use** button. 
 - Choose the appropriate pre-treatments and build the PCA model by clicking the **Build Model** button. **Repeat the same process with the Bucket Spectra matrix**. 
 
-> **IMPORTANT:** ***After clicking Build Model, the PCA model is internally saved for the selected input matrix. However, it is essential that all PCA models are built using the same number of PCs.*** 
+> **IMPORTANT:** ***After clicking Build Model, the PCA model is internally saved for the selected input matrix.***
+
+![Unsupervised_Analysis_2](/images/Unsupervised_Analysis_2.png)
 
 - Once PCA models for the three matrices are built, click on the **Comparative PCA** button.
 - A new window will appear showing the **score plots**, **loading plots**, and **Statistical Results** tables (including **explained variance**, **cumulative variance**, **RMSEC**, and **RMSECV**) for each matrix.
@@ -306,9 +304,7 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 - Select the matrix of interest (e.g., **Bucket Spectra**) and a new window will open showing the available PCs.
 - Choose the desired PC (e.g., **PC3**) and click the **Select** button. The score plot will automatically update based on the selection. 
 
-![Processing_1](/images/Interval-based_detection_2.png)
-![Processing_1](/images/Interval-based_detection_3.png)
-![Processing_1](/images/Interval-based_detection_4.png)
+![Unsupervised_Analysis_3](/images/Unsupervised_Analysis_3.png)
 
 </details>
 
