@@ -290,6 +290,22 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 
 ### 4.2 COMPARATIVE PCA
 
+> **IMPORTANT:** ***The Comparative PCA function will ONLY BE AVAILABLE if the option Binning to Compare was PREVIOUSLY SELECTED in the Processing tab.*** 
+
+- To compare the PCA results obtained from the **C<sub>Features</sub>** with other processing strategies, independent PCA models must first be built using the internally stored matrices: **Original Processed** and **Bucket Spectra**. 
+- Click the **Comparative Pretreatment** button. A new window will open, allows to select one of the three available matrices: **Original Processed**, **Bucker Spectra**, or **C<sub>Features</sub>** . 
+- For instance, select **Original Processed** and click the **Use** button. 
+- Choose the appropriate pre-treatments and build the PCA model by clicking the **Build Model** button. **Repeat the same process with the Bucket Spectra matrix**. 
+
+> **IMPORTANT:** ***After clicking Build Model, the PCA model is internally saved for the selected input matrix. However, it is essential that all PCA models are built using the same number of PCs.*** 
+
+- Once PCA models for the three matrices are built, click on the **Comparative PCA** button.
+- A new window will appear showing the **score plots**, **loading plots**, and **Statistical Results** tables (including **explained variance**, **cumulative variance**, **RMSEC**, and **RMSECV**) for each matrix.
+- To display the 95% confidence ellipse, activate the **95% ellipse** checkbox. 
+- To compare different PC combinations in the score plots, go to the **PCs List** section in the **Comparative PCA** window. 
+- Select the matrix of interest (e.g., **Bucket Spectra**) and a new window will open showing the available PCs.
+- Choose the desired PC (e.g., **PC3**) and click the **Select** button. The score plot will automatically update based on the selection. 
+
 ![Processing_1](/images/Interval-based_detection_2.png)
 ![Processing_1](/images/Interval-based_detection_3.png)
 ![Processing_1](/images/Interval-based_detection_4.png)
