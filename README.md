@@ -265,8 +265,31 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 <summary> 4.1 EXPLORATORY ANALYSIS VIA PCA </summary>
 
 ### 4.1 EXPLORATORY ANALYSIS VIA PCA
+- To initiate the PCA model in InRA, click the **Coloring Samples** button. 
+- A new window will appear indicating the total number of available samples (e.g., **You have 70 samples**). 
+- The current version of InRA allows up to five color-coded sample groups. To activate a group, tick the corresponding **checkbox** and define the range of samples by entering their indices in the **First Sample** and **Last Sample** fields, according to the row order of the original matrix. 
+- Click **Select Color** to choose an appropriate color for the group, and click **Continue** to proceed. 
+- Once the samples are color-coded, the **PCA Model Settings** module becomes available. The latter module includes several pre-treatment options: **Log10 transformation**, ***Pareto*** **scaling**, **Variance scaling**, and **Mean center**. 
+- After selecting the desired pre-treatments, specify the number of principal components in the **Number of PCs** section (default is 5). 
+- Finally, click the **Build Model** button to perform PCA. 
+- After the PCA model was built, the **scores plot** and **loadings plot** will be displayed, along with a table titled **Statistical Results** that includes the values for **Explained Variance**, **Cumulative Variance**, **RMSEC**, and **RMSECV**. 
+- A list called **PCs List** allows the selection of a specific principal component (e.g., PC3), which will be plotted automatically on the **scores plot**. Additionally, the 95% confidence ellipse can be toggled on or off using the **95% ellipse** checkbox. 
+- The loading plot is shown as a **bar chart**, with bars colored according to the spectral region of the corresponding MCR-decomposed interval.
+- Through the **Loading List**, the loading values across components can be explored.
+- In the **Graphical Outputs** section, different types of result visualization can be selected, such as **Explained Variance**, **Cumulative Variance**, **RMSEC/RMSECV**, and **Resolved ST**. 
+- If **Resolved ST** is selected, a list titled MCR Component will appear, containing all previously resolved **S<sup>T</sup>**.
+- Selecting a component (e.g., 18) will automatically display its corresponding spectral profile in the **Resolved Spectral Profile S<sup>T</sup>** plot, including the spectral region and interval to which it belongs (e.g., **Region 1 - Interval 15**). 
 
 ![Processing_1](/images/Interval-based_detection_1.png)
+
+</details>
+
+<details>
+
+<summary> 4.2 COMPARATIVE PCA </summary>
+
+### 4.2 COMPARATIVE PCA
+
 ![Processing_1](/images/Interval-based_detection_2.png)
 ![Processing_1](/images/Interval-based_detection_3.png)
 ![Processing_1](/images/Interval-based_detection_4.png)
