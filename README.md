@@ -147,9 +147,9 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 ### 2.2 PERFORM RESONANCE SIGNAL DETECTION
 - To begin the signal detection process, a threshold value must be set in the **Threshold** section (e.g., 0.001). The threshold value can range between 0.001 and 0.7500. 
 - Detection can be performed either independently for each spectral region or simultaneously across all regions: 
-  - Independent detection:  
+  - **Independent detection**:  
     To detect signals in a specific region, click the **Detect** button associated with that region. Once the signals are detected and the intervals are generated, they will be displayed on the spectral plot. An independent list will be created for each spectral region (R1, R2, and R3). Each list contains the numbered intervals, which can be browsed. The ppm boundaries of each interval will appear in the **Lower ppm** and **Higher ppm** sections. 
-  - Simultaneous detection:  
+  - **Simultaneous detection**:  
     To detect signals across all spectral regions at once, define a threshold value for each region. Click the purple Detect button to perform detection. The generated intervals will appear on the plot with distinct color to distinguish their corresponding spectral regions. 
 
 > **IMPORTANT:** ***Threshold values can be adjusted for each spectral region as many times as necessary until a suitable detection is achieved.***
