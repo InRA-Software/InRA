@@ -30,10 +30,6 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 > [!IMPORTANT]
 > ***To import a set of <sup>1</sup>1H NMR spectra into the current version of InRA (v1.0), the spectra must be previously phased, baseline-corrected, and referenced. Accepted file formats include .cv, .xlsx, and .xls. In the matrix array, the first column must contain the chemical shifts values (ppm), while the subsequent columns should include the intensity values for each sample).***
 
-<details>
-
-<summary> 1. PROCESSING </summary>
-
 ## 1. PROCESSING
 
 <details>
@@ -103,13 +99,7 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 
 </details>
 
-</details>
-
 ##
-
-<details>
-
-<summary> 2. INTERVAL-BASED DETECTION </summary>
 
 ## 2. INTERVAL-BASED DETECTION
 
@@ -177,26 +167,28 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 
 </details>
 
-</details>
-
 ##
+
+## 3. RESONANCE INTEGRATION
 
 <details>
 
-<summary> 3. RESONANCE INTEGRATION </summary>
+<summary> 3.1 RESONANCE INTEGRATION OVERVIEW </summary>
 
-## 3. RESONANCE INTEGRATION
+### 3.1 RESONANCE INTEGRATION OVERVIEW
 - As the interval detection process, the intervals remain organized according to their specific spectral region. 
 - To explore an individual interval, select the desired region (e.g., **Region 2**) and choose the interval of interest from the list. 
 - For each selected interval, the **Purest ST** module displays a plot titled Eigenvalues, where the magnitudes of the eigenvalues obtained through Singular Value Decomposition (SVD) are shown (up to a maximum of 10 components). The **Eigenvalues** plot updates automatically whenever a different interval is selected. 
 - Furthermore, InRA incorporates two optimized multi-modelling approaches - **All-at-Once** and **Once-at-Time** - which can be applied depending on the specific goals of the analysis. 
 ![Resonance_Integration_1](/images/Resonance_Integration_1.png)
 
+</details>
+
 <details>
 
-<summary> 3.1 MCR DECOMPOSITION </summary>
+<summary> 3.2 MCR DECOMPOSITION </summary>
 
-### 3.1 MCR DECOMPOSITION
+### 3.2 MCR DECOMPOSITION
 
 > **IMPORTANT:** ***Interval decomposition in InRA is carried out via Multivariate Curve Resolution (MCR) (https://doi.org/10.1039/c4ay00571f). Initial estimates are obtained through the most dissimilar rows ("purest S<sup>T</sup>"), following an approach analogous to the SIMPLISMA algorithm. To reduce the number of feasible solutions caused by rotational ambiguity, InRA implements the TNT-NN algorithm (https://doi.org/10.1016/j.procs.2017.05.194) - an enhanced version of FNNLS - which enforces non-negativity constraints on both directions (C and S<sup>T</sup>) and reduces computational load by solving multiple MCR models simultaneously during optimization via Alternating Least Squares (ALS).***
 
@@ -246,13 +238,8 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 
 </details>
 
-</details>
 
 ##
-
-<details>
-
-<summary> 4. UNSUPERVISED ANALYSIS </summary>
 
 ## 4. UNSUPERVISED ANALYSIS
 
@@ -308,4 +295,3 @@ Before starting, make sure the file **InRA.m** is located in the same directory 
 
 </details>
 
-</details>
