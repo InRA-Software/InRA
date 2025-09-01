@@ -28,7 +28,7 @@ InRA GUI consists of .m files developed under MATLAB R2023b.
 # ANALYTICAL WORKFLOW OF InRA
 Before starting, make sure the file **InRA.m** is located in the same directory as the **scripts** and **modules** folders.
 > [!IMPORTANT]
-> ***To import a set of <sup>1</sup>1H NMR spectra into the current version of InRA (v1.0), the spectra must be previously phased, baseline-corrected, and referenced. Accepted file formats include .cv, .xlsx, and .xls. In the matrix array, the first column must contain the chemical shifts values (ppm), while the subsequent columns should include the intensity values for each sample).***
+> ***To import a set of <sup>1</sup>1H NMR spectra into the current version of InRA (v1.0), the spectra must be previously phased, baseline-corrected, and referenced. Accepted file formats include .csv, .xlsx, and .xls. In the matrix array, the first column must contain the chemical shifts values (ppm), while the subsequent columns should include the intensity values for each sample).***
 
 ## 1. PROCESSING
 
